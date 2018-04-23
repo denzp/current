@@ -8,5 +8,9 @@ proc-macro = true
 
 [dependencies]
 syn = { version = "0.13", features = ["full"] }
+proc-macro2 = { version = "0.3", features = ["nightly"] }
 quote = "0.5"
-proc-macro2 = "0.3"
+
+[dev-dependencies]
+compiletest_rs = "0.3"
+current = { path = "../current" }

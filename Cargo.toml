@@ -1,0 +1,2 @@
+[workspace]
+members = ["current_macro", "current", "example"]

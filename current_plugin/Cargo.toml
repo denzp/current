@@ -1,0 +1,9 @@
+[package]
+name = "current_plugin"
+version = "0.1.0"
+authors = ["Denys Zariaiev <denys.zariaiev@gmail.com>"]
+
+[lib]
+plugin = true
+
+[dependencies]

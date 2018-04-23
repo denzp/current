@@ -1,0 +1,9 @@
+[package]
+name = "example"
+version = "0.1.0"
+authors = ["Denys Zariaiev <denys.zariaiev@gmail.com>"]
+
+[dependencies]
+current_macro = { path = "../current_macro" }
+current_plugin = { path = "../current_plugin" }
+current = { path = "../current" }

@@ -1,0 +1,12 @@
+[package]
+name = "current_macro"
+version = "0.1.0"
+authors = ["Denys Zariaiev <denys.zariaiev@gmail.com>"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = { version = "0.13", features = ["full"] }
+quote = "0.5"
+proc-macro2 = "0.3"

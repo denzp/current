@@ -2,8 +2,9 @@
 // pretty-mode:expanded
 // pp-exact:kernel.pp
 
-#![feature(proc_macro, no_core)]
-#![no_core]
+#![feature(proc_macro)]
+#![cfg_attr(target_os = "cuda", feature(abi_ptx))]
+#![cfg_attr(target_os = "cuda", no_std)]
 
 extern crate current;
 extern crate current_macro;

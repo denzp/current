@@ -1,9 +1,14 @@
+#![feature(prelude_import)]
+#![no_std]
 // pretty-compare-only
 // pretty-mode:expanded
 // pp-exact:target-attr.pp
 
-#![feature(proc_macro, no_core)]
-#![no_core]
+#![feature(proc_macro)]
+#[prelude_import]
+use std::prelude::v1::*;
+#[macro_use]
+extern crate std;
 
 extern crate current;
 extern crate current_macro;

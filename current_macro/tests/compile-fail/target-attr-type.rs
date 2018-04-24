@@ -1,4 +1,5 @@
 #![feature(proc_macro)]
+#![cfg_attr(target_os = "cuda", no_std)]
 
 extern crate current;
 extern crate current_macro;

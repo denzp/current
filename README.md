@@ -5,7 +5,7 @@
 The crate is a **far-far away** from being usable.
 
 ## Hacking
-You can inspect host and device code with a help of `xargo`, `cargo-expand` and `ptx-linker` (both can be installed from crates.io):
+You can inspect host and device code with a help of `xargo`, `cargo-expand` and `ptx-linker` (all can be installed from crates.io):
 
 ``` bash
 ptx-linker print nvptx64-nvidia-cuda > /tmp/nvptx64-nvidia-cuda.json

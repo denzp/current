@@ -1,5 +1,5 @@
-// TODO: no_std for both targets?
 #![cfg_attr(target_os = "cuda", no_std)]
+#![deny(warnings)]
 
 pub trait CudaModuleLoader {
     fn get_module_ptx_assembly() -> &'static str;

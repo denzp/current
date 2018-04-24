@@ -1,4 +1,5 @@
 #![feature(proc_macro)]
+#![deny(warnings)]
 
 extern crate proc_macro;
 extern crate proc_macro2;

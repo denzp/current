@@ -14,9 +14,7 @@ fn run_mode(mode: Mode, base: Option<&str>, target: Option<&str>) {
     config.target_rustcflags = Some(
         [
             "-L crate=../target/debug",
-            "-L dependency=../target/debug/deps",
             "-L crate=../target/nvptx64-nvidia-cuda/debug",
-            "-L dependency=../target/nvptx64-nvidia-cuda/debug/deps",
             &format!(
                 "-L crate={}/../.xargo/lib/rustlib/nvptx64-nvidia-cuda/lib",
                 env::var("CARGO_HOME").unwrap()
@@ -38,7 +36,6 @@ fn run_mode(mode: Mode, base: Option<&str>, target: Option<&str>) {
 
 #[test]
 fn compile_test() {
-    prepare_nvptx_definition();
     build_nvptx_dependencies();
 
     run_mode(Mode::CompileFail, None, None);
@@ -52,22 +49,10 @@ fn compile_test() {
     );
 }
 
-fn prepare_nvptx_definition() {
-    let mut shell = Command::new("sh");
-
-    shell.args(&[
-        "-c",
-        "ptx-linker print nvptx64-nvidia-cuda > /tmp/nvptx64-nvidia-cuda.json",
-    ]);
-
-    assert!(shell.status().unwrap().success());
-}
-
 fn build_nvptx_dependencies() {
     let mut xargo = Command::new("xargo");
 
     xargo.current_dir("../current");
-    xargo.env("RUST_TARGET_PATH", "/tmp");
     xargo.args(&["build", "--target", "nvptx64-nvidia-cuda"]);
 
     assert!(xargo.status().unwrap().success());
